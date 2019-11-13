@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+
+    <script src="http://cdn.bootcss.com/jquery/1.12.3/jquery.min.js"></script>
+    <script src="/layer/layer.js"></script>
+    <script type="text/javascript">
+        var pages = [
+            "https://blog.csdn.net/guangcaiwudong/article/details/97015991",
+            "https://blog.csdn.net/guangcaiwudong/article/details/97014923",
+            "https://blog.csdn.net/guangcaiwudong/article/details/95998691",
+            "https://blog.csdn.net/guangcaiwudong/article/details/96427560",
+            "https://blog.csdn.net/guangcaiwudong/article/details/96976498",
+            "https://blog.csdn.net/guangcaiwudong/article/details/96977015",
+            "https://blog.csdn.net/guangcaiwudong/article/details/96977880",
+            "https://blog.csdn.net/guangcaiwudong/article/details/96978532",
+            "https://blog.csdn.net/guangcaiwudong/article/details/96981251",
+            "https://blog.csdn.net/guangcaiwudong/article/details/96982553",
+            "https://blog.csdn.net/guangcaiwudong/article/details/96994516",
+            "https://blog.csdn.net/guangcaiwudong/article/details/96995954",
+            "https://blog.csdn.net/guangcaiwudong/article/details/96996814",
+            "https://blog.csdn.net/guangcaiwudong/article/details/96999533",
+            "https://blog.csdn.net/guangcaiwudong/article/details/97000690"
+        ];
+
+        function scanPage(){
+            for(var i=0;i<pages.length;i++){
+                setTimeout("openCdns('"+pages[i]+"')",6000*(i+1));
+            }
+        }
+
+        function openCdns(v_page){
+            console.log("打开新窗口"+v_page);
+            var index=layer.open({type:2, content : v_page, area : ['1000px','600px']});
+
+            setTimeout(function(){
+                console.log("关闭窗口"+v_page);
+                layer.close(index);
+            },3000);
+        }
+
+        scanPage();
+        setInterval(function(){
+            scanPage();
+        }, 90000);
+    </script>
+</head>
+<body>
+定时
+
+
+</body>
+</html>
